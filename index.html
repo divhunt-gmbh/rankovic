@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destilerija Ranković | TALIJA - Premium Srpska Rakija</title>
+    <meta name="description" content="Destilerija Ranković iz Lazarevca - TALIJA premium rakija. Kap po kap, stvaramo više od pića. Šljivovica, Jabuka, Kruška, Dunja.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- ============================================
+         AGE VERIFICATION MODAL
+         ============================================ -->
+    <div class="age-modal" id="ageModal">
+        <div class="age-modal-content">
+            <div class="age-modal-logo">TALIJA</div>
+            <h2>Dobrodošli</h2>
+            <p>Da biste pristupili ovom sajtu, morate imati najmanje 18 godina.</p>
+            <p class="age-question">Da li imate 18 ili više godina?</p>
+            <div class="age-buttons">
+                <button class="age-btn age-btn-yes" id="ageYes">Da, imam 18+</button>
+                <button class="age-btn age-btn-no" id="ageNo">Ne</button>
+            </div>
+            <p class="age-disclaimer">Ulaskom na ovaj sajt potvrđujete da imate zakonski dozvoljene godine za konzumiranje alkohola u vašoj zemlji.</p>
+        </div>
+    </div>
+
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#hero" class="logo">
+                    <span class="logo-main"><span class="logo-talija">TALIJA</span> by Ranković</span>
+                    <span class="logo-sub">Destilerija · Est. 2024 · Lazarevac</span>
+                </a>
+
+                <nav class="nav" id="nav">
+                    <ul class="nav-list">
+                        <li><a href="#hero" class="nav-link">Početna</a></li>
+                        <li><a href="#about" class="nav-link">O Nama</a></li>
+                        <li><a href="#products" class="nav-link">TALIJA</a></li>
+                        <li><a href="#gallery" class="nav-link">Galerija</a></li>
+                        <li><a href="#contact" class="nav-link">Kontakt</a></li>
+                    </ul>
+                </nav>
+
+                <button class="hamburger" id="hamburger" aria-label="Meni">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <p class="hero-subtitle">Destilerija Ranković predstavlja</p>
+            <h1 class="hero-title"><span class="hero-talija">TALIJA</span></h1>
+            <p class="hero-tagline">Rakija sa Pričom</p>
+            <p class="hero-description">
+                Iz srca Lazarevca, kap po kap, stvaramo više od pića –
+                stvaramo uspomene koje ostaju zauvek.
+            </p>
+            <a href="#products" class="hero-btn">Otkrijte Kolekciju</a>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Skrolujte</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         INTRO STATEMENT SECTION
+         ============================================ -->
+    <section class="section section-statement">
+        <div class="container">
+            <div class="statement-content reveal">
+                <p class="statement-text">
+                    Smeštena u Lazarevcu, Destilerija Ranković je ponosni proizvođač vrhunske rakije, spajajući tradiciju sa inovacijama. Naša kolekcija prikazuje najfinija pića, izrađena sa preciznošću kako bi pružila jedinstvene ukuse koji osvajaju čula.
+                </p>
+                <p class="statement-text">
+                    U Destileriji Ranković smo posvećeni kvalitetu i izvrsnosti, neprestano nastojeći da prevazićemo očekivanja. Bez obzira da li ste poznavalac ili povremeni entuzijasta, naše rakije obećavaju izuzetno iskustvo sa svakim gutljajem.
+                </p>
+                <div class="statement-divider"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION
+         ============================================ -->
+    <section class="section section-light" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="images/viber_slika_2025-12-08_16-15-32-196.jpg" alt="Destilerija Ranković">
+                </div>
+
+                <div class="about-content reveal">
+                    <div class="section-label">O Nama</div>
+                    <h3>Porodica Ranković – Čuvari Tradicije</h3>
+
+                    <p>
+                        U našoj destileriji u Lazarevcu, svaki dan počinje istom strašću koja je pokretala generacije pre nas – ljubavlju prema voću, poštovanjem prema tradiciji i predanošću savršenstvu.
+                    </p>
+
+                    <p>
+                        Destilerija Ranković je prva generacija koja je pretočila naše porodično umeće u brend koji nosi dušu srpske zemlje. Mi nismo samo destilatori. Mi smo čuvari priča, zanatlije emocija, ljudi koji veruju da rakija nije samo piće – već doživljaj.
+                    </p>
+
+                    <p>
+                        Svaka boca TALIJA rakije koju otvorite donosi vam trenutak naše porodične istorije, miris naših voćnjaka, toplinu naših ruku koje su negovale svaki plod od cveta do čaše.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h4>Čisto Voće</h4>
+                                <p>Samo priroda i naše umeće</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div>
+                                <h4>Dvostruka Destilacija</h4>
+                                <p>Tradicionalne metode</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div>
+                                <h4>Sa Ljubavlju</h4>
+                                <p>Kap po kap, sa strpljenjem</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div>
+                                <h4>Premium Kvalitet</h4>
+                                <p>Bez kompromisa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PRODUCTS SECTION
+         ============================================ -->
+    <section class="section section-dark" id="products">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Naši Proizvodi</p>
+                <h2 class="section-title">TALIJA Kolekcija</h2>
+                <p class="section-description">Četiri ukusa, jedna priča</p>
+            </div>
+
+            <p class="products-intro reveal">
+                TALIJA je naša ljubavna pesma srpskom voću. Četiri različite sorte, četiri jedinstvena karaktera, ali jedna zajednička duša – posvećenost kvalitetu i autentičnosti.
+            </p>
+
+            <div class="products-grid">
+                <!-- Šljiva -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <img src="images/viber_slika_2025-12-08_16-15-33-077.jpg" alt="TALIJA Šljiva">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">TALIJA Šljiva</h3>
+                        <span class="product-subtitle">Duša Zemlje</span>
+                        <p class="product-description">
+                            Duboki, slojeviti profil zrele šljive sa notama badema i suptilnim tonom vanile. Završnica je meka, dugačka, sa iskrama karamele i tamnog drveta.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Jabuka -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <img src="images/viber_slika_2025-12-08_16-15-33-284.jpg" alt="TALIJA Jabuka">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">TALIJA Jabuka</h3>
+                        <span class="product-subtitle">Jutarnja Svetlost</span>
+                        <p class="product-description">
+                            Sveža, živahna aroma zelenih i crvenih jabuka sa citruznim akcentima. Ukus je balansiran – slatko-kiselkasto, sa blagom začinskom notom.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Kruška -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <img src="images/viber_slika_2025-12-08_16-15-33-501.jpg" alt="TALIJA Kruška">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">TALIJA Kruška</h3>
+                        <span class="product-subtitle">Kristalna Elegancija</span>
+                        <p class="product-description">
+                            Mirisna, cvetna aroma Williams kruške koja otvara čula. Ukus je svilenkast, mekan, sa fino izbalansiranom slatkoćom i diskretnom kiselošću.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Dunja -->
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <img src="images/viber_slika_2025-12-08_16-15-33-710.jpg" alt="TALIJA Dunja">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">TALIJA Dunja</h3>
+                        <span class="product-subtitle">Zlatna Pesma</span>
+                        <p class="product-description">
+                            Bogata, složena aroma dunje sa cvetnim notama kamilice i pregrejanih kajsija. Završnica je duga, zlatna, aromatična.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-cta reveal">
+                <a href="#contact" class="btn-primary">Kontaktirajte Nas za Porudžbinu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         GALLERY SECTION
+         ============================================ -->
+    <section class="section section-light" id="gallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Galerija</p>
+                <h2 class="section-title">Pogledajte Našu Destileriju</h2>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item reveal">
+                    <img src="images/viber_slika_2025-12-08_16-15-30-223.jpg" alt="TALIJA Kolekcija">
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="images/viber_slika_2025-12-08_16-15-32-416.jpg" alt="Premium Rakija">
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="images/viber_slika_2025-12-08_16-15-32-632.jpg" alt="Destilerija">
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="images/viber_slika_2025-12-08_16-15-34-143.jpg" alt="TALIJA Bottles">
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="images/viber_slika_2025-12-08_16-15-34-355.jpg" alt="Rakija Production">
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="images/viber_slika_2025-12-08_16-15-34-566.jpg" alt="Premium Spirits">
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="images/viber_slika_2025-12-08_16-15-35-595.jpg" alt="TALIJA Collection">
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="images/viber_slika_2025-12-08_16-15-35-787.jpg" alt="Destilerija Ranković">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT SECTION
+         ============================================ -->
+    <section class="section section-dark" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Kontakt</p>
+                <h2 class="section-title">Stupite u Vezu sa Nama</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3>Posetite Nas</h3>
+                    <p>
+                        Bilo da ste ljubitelj rakije koji traži kvalitet, partner koji deli naše vrednosti,
+                        ili jednostavno neko ko želi da čuje priču – vrata naše destilerije su otvorena.
+                    </p>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Adresa</h4>
+                            <p>Medoševački Put 2a, Lazarevac</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Telefon</h4>
+                            <p><a href="tel:+381653830010">065 383 00 10</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:contact@destilarija.com">contact@destilarija.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form reveal" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Ime i Prezime</label>
+                        <input type="text" id="name" name="name" placeholder="Vaše ime" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Adresa</label>
+                        <input type="email" id="email" name="email" placeholder="vas@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" placeholder="065 123 4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Vaša Poruka</label>
+                        <textarea id="message" name="message" placeholder="Napišite vašu poruku..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Pošaljite Poruku</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-main"><span class="logo-talija">TALIJA</span> by Ranković</span>
+                    <span class="logo-sub">Kap po Kap, Priča po Priča</span>
+                    <p>Čuvari tradicije iz srca Lazarevca. Stvaramo rakiju koja se ne pije – već se oseća.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Navigacija</h4>
+                    <ul>
+                        <li><a href="#hero">Početna</a></li>
+                        <li><a href="#about">O Nama</a></li>
+                        <li><a href="#products">TALIJA</a></li>
+                        <li><a href="#gallery">Galerija</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Kontakt</h4>
+                    <p>Medoševački Put 2a</p>
+                    <p>Lazarevac, Srbija</p>
+                    <p><a href="tel:+381653830010">065 383 00 10</a></p>
+                    <p><a href="mailto:contact@destilarija.com">contact@destilarija.com</a></p>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Pratite Nas</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Destilerija Ranković. Sva prava zadržana.</p>
+                <p class="drink-responsibly">Pijte odgovorno.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <img src="" alt="Gallery Image" id="lightboxImage">
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
