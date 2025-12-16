@@ -159,7 +159,7 @@ def create_presentation():
 
     # Features list
     features = [
-        ("🍇 Vekovna tradicija · 数百年的传统", "Proizvodnja rakije datira od 14. veka"),
+        ("🍇 Decenijska tradicija · 数十年的传统", "Porodična proizvodnja rakije kroz generacije"),
         ("🏠 Porodična tradicija · 家族传统", "Svaka porodica ima svoju recepturu"),
         ("🤝 Simbol gostoprimstva · 好客的象征", "Rakija se služi gostima kao znak dobrodošlice"),
         ("🌍 Geografski zaštićen proizvod · 地理标志保护产品", "Autentičan evropski proizvod"),
