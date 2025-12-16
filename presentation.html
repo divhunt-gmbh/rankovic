@@ -431,12 +431,196 @@
             }
             .grid-2 {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
             .grid-4 {
                 grid-template-columns: repeat(2, 1fr);
             }
             .title-slide .brand {
                 font-size: 4rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 30px 20px;
+                min-height: auto;
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+            h1 {
+                font-size: 2.25rem;
+            }
+            h2 {
+                font-size: 1.75rem;
+                margin-bottom: 1.5rem;
+            }
+            h3 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            .title-slide .brand {
+                font-size: 2.75rem;
+                letter-spacing: 0.1em;
+            }
+            .title-slide .tagline {
+                font-size: 1.25rem;
+                letter-spacing: 0.15em;
+                margin: 1.5rem 0;
+            }
+            .title-slide .subtitle {
+                font-size: 1.1rem;
+            }
+            .chinese {
+                font-size: 0.8em;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .grid-2 > div:first-child {
+                order: 0;
+            }
+            .grid-2 img {
+                height: 250px !important;
+                width: 100% !important;
+            }
+            .grid-4 {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .card {
+                padding: 25px 20px;
+            }
+            .card-icon {
+                font-size: 2.25rem;
+                margin-bottom: 1rem;
+            }
+            .card h3 {
+                font-size: 1.25rem;
+            }
+            .card p {
+                font-size: 0.9rem;
+            }
+            .quote {
+                font-size: 1.25rem;
+            }
+            .quote::before {
+                font-size: 2.5rem;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            .stat-label {
+                font-size: 0.75rem;
+            }
+            .feature-list li {
+                font-size: 1rem;
+                padding: 0.75rem 0;
+            }
+            .feature-list .icon {
+                font-size: 1.25rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .contact-item {
+                padding: 20px;
+            }
+            .contact-item .icon {
+                font-size: 2rem;
+            }
+            .contact-item h4 {
+                font-size: 1.1rem;
+            }
+            .contact-item p {
+                font-size: 0.95rem;
+            }
+            .corner-decoration {
+                width: 50px;
+                height: 50px;
+            }
+            .corner-tl {
+                top: 15px;
+                left: 15px;
+            }
+            .corner-br {
+                bottom: 15px;
+                right: 15px;
+            }
+            .slide-number {
+                bottom: 15px;
+                right: 20px;
+                font-size: 0.8rem;
+            }
+            .nav-dots {
+                right: 10px;
+                gap: 8px;
+            }
+            .nav-dot {
+                width: 8px;
+                height: 8px;
+            }
+            .gold-line {
+                width: 60px;
+                margin: 1.5rem auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide {
+                padding: 25px 15px;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            .title-slide .brand {
+                font-size: 2.25rem;
+            }
+            .title-slide .tagline {
+                font-size: 1rem;
+                letter-spacing: 0.1em;
+            }
+            .grid-2 img {
+                height: 200px !important;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+            .stat-label {
+                font-size: 0.65rem;
+            }
+            .feature-list li {
+                font-size: 0.9rem;
+                gap: 0.5rem;
+            }
+            .quote {
+                font-size: 1.1rem;
             }
         }
     </style>
