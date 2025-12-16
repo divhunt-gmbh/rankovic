@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALIJA by Ranković - Презентација / 演示文稿</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A227;
+            --gold-light: #D4AF37;
+            --dark: #0D0D0D;
+            --dark-soft: #1a1a1a;
+            --beige: #F5F0E6;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .slide {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 80px;
+            position: relative;
+            scroll-snap-align: start;
+            overflow: hidden;
+        }
+
+        .slide-dark {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-soft) 100%);
+        }
+
+        .slide-light {
+            background: var(--beige);
+            color: var(--dark);
+        }
+
+        .slide-gold {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--dark);
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .chinese {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.7em;
+            opacity: 0.85;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .chinese-inline {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.85em;
+            opacity: 0.85;
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .dark-text {
+            color: var(--dark);
+        }
+
+        /* Slide 1 - Title */
+        .title-slide .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title-slide .tagline {
+            font-size: 2rem;
+            font-weight: 300;
+            margin: 2rem 0;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        .title-slide .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            margin-top: 3rem;
+        }
+
+        .gold-line {
+            width: 100px;
+            height: 2px;
+            background: var(--gold);
+            margin: 2rem auto;
+        }
+
+        /* Grid layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            width: 100%;
+            max-width: 1400px;
+            align-items: center;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .card-light {
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        /* Product cards */
+        .product-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(201, 162, 39, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .product-card .product-image {
+            width: 200px;
+            height: 300px;
+            background: linear-gradient(180deg, rgba(201,162,39,0.1) 0%, rgba(201,162,39,0.05) 100%);
+            border-radius: 8px;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .product-card h3 {
+            color: var(--gold);
+            font-size: 1.75rem;
+        }
+
+        .product-card .subtitle {
+            font-style: italic;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .product-card p {
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        /* Image placeholder */
+        .image-placeholder {
+            background: linear-gradient(135deg, rgba(201,162,39,0.2) 0%, rgba(201,162,39,0.1) 100%);
+            border: 2px dashed var(--gold);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--gold);
+            min-height: 400px;
+        }
+
+        /* Lists */
+        .feature-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .feature-list li {
+            font-size: 1.25rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(201,162,39,0.2);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list .icon {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        /* Contact info */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .contact-item .icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+        }
+
+        /* Slide number */
+        .slide-number {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 0.9rem;
+            opacity: 0.5;
+        }
+
+        /* Decorative elements */
+        .corner-decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid var(--gold);
+            opacity: 0.3;
+        }
+
+        .corner-tl {
+            top: 30px;
+            left: 30px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner-br {
+            bottom: 30px;
+            right: 30px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Quote */
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-style: italic;
+            text-align: center;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        .quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--gold);
+            display: block;
+            line-height: 1;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+        }
+
+        /* Navigation dots */
+        .nav-dots {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .nav-dot:hover,
+        .nav-dot.active {
+            background: var(--gold);
+            transform: scale(1.2);
+        }
+
+        /* Print styles */
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: 100vh;
+            }
+            .nav-dots {
+                display: none;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 40px;
+            }
+            h1 {
+                font-size: 3rem;
+            }
+            h2 {
+                font-size: 2.25rem;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .title-slide .brand {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <div class="nav-dot active" data-slide="0"></div>
+        <div class="nav-dot" data-slide="1"></div>
+        <div class="nav-dot" data-slide="2"></div>
+        <div class="nav-dot" data-slide="3"></div>
+        <div class="nav-dot" data-slide="4"></div>
+        <div class="nav-dot" data-slide="5"></div>
+        <div class="nav-dot" data-slide="6"></div>
+        <div class="nav-dot" data-slide="7"></div>
+        <div class="nav-dot" data-slide="8"></div>
+        <div class="nav-dot" data-slide="9"></div>
+        <div class="nav-dot" data-slide="10"></div>
+        <div class="nav-dot" data-slide="11"></div>
+        <div class="nav-dot" data-slide="12"></div>
+        <div class="nav-dot" data-slide="13"></div>
+    </div>
+
+    <!-- SLIDE 1: Title -->
+    <section class="slide slide-dark title-slide">
+        <div class="corner-decoration corner-tl"></div>
+        <div class="corner-decoration corner-br"></div>
+
+        <div class="brand">TALIJA</div>
+        <p style="font-size: 1.5rem; letter-spacing: 0.2em; margin-top: 0.5rem;">by Ranković</p>
+
+        <div class="gold-line"></div>
+
+        <div class="tagline">
+            Rakija sa Pričom
+            <span class="chinese">有故事的拉基亚</span>
+        </div>
+
+        <p class="subtitle">
+            Premium Srpska Rakija · 塞尔维亚优质拉基亚
+        </p>
+
+        <p style="margin-top: 3rem; opacity: 0.6; font-size: 1rem;">
+            Destilerija Ranković · Est. 2022 · Lazarevac, Srbija
+        </p>
+
+        <span class="slide-number">01 / 14</span>
+    </section>
+
+    <!-- SLIDE 2: About Serbia & Rakija -->
+    <section class="slide slide-light">
+        <h2>
+            Srbija – Zemlja Rakije
+            <span class="chinese dark-text">塞尔维亚 - 拉基亚之乡</span>
+        </h2>
+
+        <div class="grid-2">
+            <div style="border-radius: 12px; overflow: hidden;">
+                <img src="images/viber_slika_2025-12-08_16-15-36-688.jpg" alt="Srbija" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;">
+            </div>
+
+            <div style="text-align: left;">
+                <ul class="feature-list" style="color: var(--dark);">
+                    <li>
+                        <span class="icon">🍇</span>
+                        <div>
+                            <strong>Vekovna tradicija</strong> · 数百年的传统<br>
+                            <span style="opacity: 0.7;">Proizvodnja rakije datira od 14. veka</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">🏠</span>
+                        <div>
+                            <strong>Porodična tradicija</strong> · 家族传统<br>
+                            <span style="opacity: 0.7;">Svaka porodica ima svoju recepturu</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">🤝</span>
+                        <div>
+                            <strong>Simbol gostoprimstva</strong> · 好客的象征<br>
+                            <span style="opacity: 0.7;">Rakija se služi gostima kao znak dobrodošlice</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="icon">🌍</span>
+                        <div>
+                            <strong>Geografski zaštićen proizvod</strong> · 地理标志保护产品<br>
+                            <span style="opacity: 0.7;">Autentičan evropski proizvod</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <span class="slide-number" style="color: var(--dark);">02 / 14</span>
+    </section>
+
+    <!-- SLIDE 3: About Destilerija Ranković -->
+    <section class="slide slide-dark">
+        <h2>
+            Destilerija Ranković
+            <span class="chinese">兰科维奇酿酒厂</span>
+        </h2>
+
+        <div class="grid-2">
+            <div>
+                <img src="images/new/WhatsApp Image 2025-12-16 at 9.35.29 PM (1).jpeg" alt="Destilerija Ranković" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;">
+            </div>
+
+            <div style="text-align: left;">
+                <h3 class="gold-text">
+                    Porodica Ranković – Čuvari Tradicije
+                    <span class="chinese" style="color: var(--white);">兰科维奇家族 - 传统的守护者</span>
+                </h3>
+
+                <p style="text-align: left; margin: 1.5rem 0;">
+                    Smeštena u Lazarevcu, naša destilerija je osnovana 2022. godine kao prva generacija koja je pretočila porodično umeće u prepoznatljiv brend.
+                </p>
+                <p class="chinese-inline" style="opacity: 0.7; display: block; margin-bottom: 2rem;">
+                    我们的酿酒厂位于拉扎雷瓦茨，成立于2022年，是第一代将家族技艺转化为知名品牌的酿酒厂。
+                </p>
+
+                <div class="stats-grid" style="grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                    <div class="stat-item">
+                        <div class="stat-number">2022</div>
+                        <div class="stat-label">Osnovano · 成立</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Vrste rakije · 品种</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <span class="slide-number">03 / 14</span>
+    </section>
+
+    <!-- SLIDE 4: Philosophy -->
+    <section class="slide slide-gold">
+        <div class="corner-decoration corner-tl" style="border-color: var(--dark);"></div>
+        <div class="corner-decoration corner-br" style="border-color: var(--dark);"></div>
+
+        <h2 class="dark-text">
+            Naša Filozofija
+            <span class="chinese dark-text">我们的理念</span>
+        </h2>
+
+        <div class="quote dark-text">
+            Kap po kap, stvaramo više od pića – stvaramo uspomene koje ostaju zauvek.
+        </div>
+        <p class="chinese-inline" style="font-size: 1.5rem; margin-top: 1rem; opacity: 0.8;">
+            一滴一滴，我们创造的不仅是饮品——我们创造永恒的回忆。
+        </p>
+
+        <div class="gold-line" style="background: var(--dark); margin: 3rem auto;"></div>
+
+        <p style="font-size: 1.5rem; max-width: 700px;">
+            Mi nismo samo destilatori. Mi smo čuvari priča, zanatlije emocija.
+        </p>
+        <p class="chinese-inline" style="font-size: 1.2rem; opacity: 0.8;">
+            我们不仅仅是酿酒师。我们是故事的守护者，情感的工匠。
+        </p>
+
+        <span class="slide-number" style="color: var(--dark);">04 / 14</span>
+    </section>
+
+    <!-- SLIDE 5: Four Pillars -->
+    <section class="slide slide-dark">
+        <h2>
+            Četiri Stuba Kvaliteta
+            <span class="chinese">质量四大支柱</span>
+        </h2>
+
+        <div class="grid-4">
+            <div class="card">
+                <div class="card-icon">🍎</div>
+                <h3 class="gold-text">Čisto Voće<span class="chinese" style="color: var(--white);">纯净水果</span></h3>
+                <p>100% prirodno voće bez aditiva</p>
+                <p class="chinese-inline">100%天然水果，无添加剂</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔥</div>
+                <h3 class="gold-text">Dvostruka Destilacija<span class="chinese" style="color: var(--white);">双重蒸馏</span></h3>
+                <p>Tradicionalne metode</p>
+                <p class="chinese-inline">传统工艺</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">❤️</div>
+                <h3 class="gold-text">Sa Ljubavlju<span class="chinese" style="color: var(--white);">用心酿造</span></h3>
+                <p>Ručna proizvodnja, mala serija</p>
+                <p class="chinese-inline">手工制作，小批量生产</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏆</div>
+                <h3 class="gold-text">Premium Kvalitet<span class="chinese" style="color: var(--white);">优质品质</span></h3>
+                <p>Bez kompromisa</p>
+                <p class="chinese-inline">绝不妥协</p>
+            </div>
+        </div>
+
+        <span class="slide-number">05 / 14</span>
+    </section>
+
+    <!-- SLIDE 6: Collection Overview -->
+    <section class="slide slide-light">
+        <h2 class="dark-text">
+            TALIJA Kolekcija
+            <span class="chinese dark-text">塔利亚系列</span>
+        </h2>
+
+        <p class="dark-text" style="font-size: 1.75rem; margin-bottom: 3rem;">
+            Četiri ukusa, jedna priča · 四种口味，一个故事
+        </p>
+
+        <div class="grid-4">
+            <div class="card card-light">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">🟣</div>
+                <h3 style="color: var(--dark);">Šljiva<span class="chinese dark-text">李子</span></h3>
+            </div>
+            <div class="card card-light">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">🍏</div>
+                <h3 style="color: var(--dark);">Jabuka<span class="chinese dark-text">苹果</span></h3>
+            </div>
+            <div class="card card-light">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">🍐</div>
+                <h3 style="color: var(--dark);">Kruška<span class="chinese dark-text">梨子</span></h3>
+            </div>
+            <div class="card card-light">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">🍑</div>
+                <h3 style="color: var(--dark);">Dunja<span class="chinese dark-text">榅桲</span></h3>
+            </div>
+        </div>
+
+        <p class="dark-text" style="margin-top: 3rem; font-style: italic;">
+            TALIJA je naša ljubavna pesma srpskom voću.
+        </p>
+        <p class="chinese-inline" style="color: var(--dark); opacity: 0.7;">
+            塔利亚是我们对塞尔维亚水果的爱的颂歌。
+        </p>
+
+        <span class="slide-number" style="color: var(--dark);">06 / 14</span>
+    </section>
+
+    <!-- SLIDE 7: Šljiva -->
+    <section class="slide slide-dark">
+        <div class="grid-2">
+            <div>
+                <img src="images/viber_slika_2025-12-08_16-15-33-501.jpg" alt="TALIJA Šljiva" style="width: 100%; height: 450px; object-fit: contain; background: #1e1e1e; border-radius: 12px;">
+            </div>
+
+            <div style="text-align: left;">
+                <p class="gold-text" style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.9rem;">TALIJA Collection</p>
+
+                <h2 style="text-align: left; margin-top: 0.5rem;">
+                    TALIJA Šljiva
+                    <span class="chinese">塔利亚李子白兰地</span>
+                </h2>
+
+                <p class="gold-text" style="font-style: italic; font-size: 1.5rem; margin-bottom: 2rem;">
+                    "Duša Zemlje" · "大地之魂"
+                </p>
+
+                <p style="text-align: left;">
+                    Duboki, slojeviti profil zrele šljive sa notama badema i suptilnim tonom vanile. Završnica je meka, dugačka, sa iskrama karamele i tamnog drveta.
+                </p>
+                <p class="chinese-inline" style="margin-top: 1rem; display: block; opacity: 0.8;">
+                    成熟李子的深层风味，带有杏仁和微妙香草的气息。口感柔和悠长，带有焦糖和深色木材的光泽。
+                </p>
+
+                <div class="gold-line" style="margin: 2rem 0; margin-left: 0;"></div>
+
+                <p style="text-align: left; font-size: 1rem; opacity: 0.7;">
+                    Šljivovica - kraljica srpskih rakija · 李子白兰地 - 塞尔维亚烈酒之王
+                </p>
+            </div>
+        </div>
+
+        <span class="slide-number">07 / 14</span>
+    </section>
+
+    <!-- SLIDE 8: Jabuka -->
+    <section class="slide slide-dark">
+        <div class="grid-2">
+            <div style="text-align: left;">
+                <p class="gold-text" style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.9rem;">TALIJA Collection</p>
+
+                <h2 style="text-align: left; margin-top: 0.5rem;">
+                    TALIJA Jabuka
+                    <span class="chinese">塔利亚苹果白兰地</span>
+                </h2>
+
+                <p class="gold-text" style="font-style: italic; font-size: 1.5rem; margin-bottom: 2rem;">
+                    "Jutarnja Svetlost" · "晨曦之光"
+                </p>
+
+                <p style="text-align: left;">
+                    Sveža, živahna aroma zelenih i crvenih jabuka sa citruznim akcentima. Ukus je balansiran – slatko-kiselkasto, sa blagom začinskom notom.
+                </p>
+                <p class="chinese-inline" style="margin-top: 1rem; display: block; opacity: 0.8;">
+                    新鲜活泼的青苹果和红苹果香气，带有柑橘的点缀。口感平衡——酸甜适中，带有淡淡的香料味。
+                </p>
+
+                <div class="gold-line" style="margin: 2rem 0; margin-left: 0;"></div>
+
+                <p style="text-align: left; font-size: 1rem; opacity: 0.7;">
+                    Osvežavajuća i elegantna · 清爽优雅
+                </p>
+            </div>
+
+            <div>
+                <img src="images/viber_slika_2025-12-08_16-15-33-284.jpg" alt="TALIJA Jabuka" style="width: 100%; height: 450px; object-fit: contain; background: #1e1e1e; border-radius: 12px;">
+            </div>
+        </div>
+
+        <span class="slide-number">08 / 14</span>
+    </section>
+
+    <!-- SLIDE 9: Kruška -->
+    <section class="slide slide-dark">
+        <div class="grid-2">
+            <div>
+                <img src="images/viber_image_2025-12-16_21-44-44-133.jpg" alt="TALIJA Kruška" style="width: 100%; height: 450px; object-fit: contain; background: #1e1e1e; border-radius: 12px;">
+            </div>
+
+            <div style="text-align: left;">
+                <p class="gold-text" style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.9rem;">TALIJA Collection</p>
+
+                <h2 style="text-align: left; margin-top: 0.5rem;">
+                    TALIJA Kruška
+                    <span class="chinese">塔利亚梨子白兰地</span>
+                </h2>
+
+                <p class="gold-text" style="font-style: italic; font-size: 1.5rem; margin-bottom: 2rem;">
+                    "Kristalna Elegancija" · "水晶般的优雅"
+                </p>
+
+                <p style="text-align: left;">
+                    Mirisna, cvetna aroma Williams kruške koja otvara čula. Ukus je svilenkast, mekan, sa fino izbalansiranom slatkoćom i diskretnom kiselošću.
+                </p>
+                <p class="chinese-inline" style="margin-top: 1rem; display: block; opacity: 0.8;">
+                    威廉斯梨的芬芳花香，唤醒感官。口感如丝般柔滑，甜度平衡，带有微妙的酸度。
+                </p>
+
+                <div class="gold-line" style="margin: 2rem 0; margin-left: 0;"></div>
+
+                <p style="text-align: left; font-size: 1rem; opacity: 0.7;">
+                    Williams kruška - najcenjenija sorta · 威廉斯梨 - 最珍贵的品种
+                </p>
+            </div>
+        </div>
+
+        <span class="slide-number">09 / 14</span>
+    </section>
+
+    <!-- SLIDE 10: Dunja -->
+    <section class="slide slide-dark">
+        <div class="grid-2">
+            <div style="text-align: left;">
+                <p class="gold-text" style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.9rem;">TALIJA Collection</p>
+
+                <h2 style="text-align: left; margin-top: 0.5rem;">
+                    TALIJA Dunja
+                    <span class="chinese">塔利亚榅桲白兰地</span>
+                </h2>
+
+                <p class="gold-text" style="font-style: italic; font-size: 1.5rem; margin-bottom: 2rem;">
+                    "Zlatna Pesma" · "金色之歌"
+                </p>
+
+                <p style="text-align: left;">
+                    Bogata, složena aroma dunje sa cvetnim notama kamilice i pregrejanih kajsija. Završnica je duga, zlatna, aromatična.
+                </p>
+                <p class="chinese-inline" style="margin-top: 1rem; display: block; opacity: 0.8;">
+                    榅桲的浓郁复杂香气，带有洋甘菊和烤杏的花香。余味悠长，金色，芳香四溢。
+                </p>
+
+                <div class="gold-line" style="margin: 2rem 0; margin-left: 0;"></div>
+
+                <p style="text-align: left; font-size: 1rem; opacity: 0.7;">
+                    Retka i dragocena · 稀有珍贵
+                </p>
+            </div>
+
+            <div>
+                <img src="images/viber_slika_2025-12-08_16-15-33-077.jpg" alt="TALIJA Dunja" style="width: 100%; height: 450px; object-fit: contain; background: #1e1e1e; border-radius: 12px;">
+            </div>
+        </div>
+
+        <span class="slide-number">10 / 14</span>
+    </section>
+
+    <!-- SLIDE 11: Why TALIJA for China -->
+    <section class="slide slide-gold">
+        <h2 class="dark-text">
+            Zašto TALIJA za Kinu?
+            <span class="chinese dark-text">为什么选择塔利亚进入中国市场？</span>
+        </h2>
+
+        <div class="grid-2" style="margin-top: 2rem;">
+            <ul class="feature-list" style="color: var(--dark);">
+                <li>
+                    <span class="icon" style="color: var(--dark);">✓</span>
+                    <div>
+                        <strong>Premium kvalitet</strong><br>
+                        <span class="chinese-inline">优质品质</span><br>
+                        <span style="opacity: 0.7;">Za zahtevno tržište · 适合高端市场</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon" style="color: var(--dark);">✓</span>
+                    <div>
+                        <strong>Autentičan evropski proizvod</strong><br>
+                        <span class="chinese-inline">正宗欧洲产品</span><br>
+                        <span style="opacity: 0.7;">Iz srca Srbije · 来自塞尔维亚的心脏</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon" style="color: var(--dark);">✓</span>
+                    <div>
+                        <strong>Jedinstveni ukusi</strong><br>
+                        <span class="chinese-inline">独特口味</span><br>
+                        <span style="opacity: 0.7;">Alternativa viskiju i konjaku · 威士忌和干邑的替代品</span>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="feature-list" style="color: var(--dark);">
+                <li>
+                    <span class="icon" style="color: var(--dark);">✓</span>
+                    <div>
+                        <strong>Elegantno pakovanje</strong><br>
+                        <span class="chinese-inline">精美包装</span><br>
+                        <span style="opacity: 0.7;">Pogodno za poklone (礼品)</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon" style="color: var(--dark);">✓</span>
+                    <div>
+                        <strong>Priča i tradicija</strong><br>
+                        <span class="chinese-inline">故事与传统</span><br>
+                        <span style="opacity: 0.7;">Ono što kineski potrošači cene · 中国消费者所重视的</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon" style="color: var(--dark);">✓</span>
+                    <div>
+                        <strong>Zdravstvene prednosti</strong><br>
+                        <span class="chinese-inline">健康益处</span><br>
+                        <span style="opacity: 0.7;">100% prirodno, bez aditiva · 100%天然，无添加剂</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <span class="slide-number" style="color: var(--dark);">11 / 14</span>
+    </section>
+
+    <!-- SLIDE 12: Cooperation Opportunities -->
+    <section class="slide slide-dark">
+        <h2>
+            Mogućnosti Saradnje
+            <span class="chinese">合作机会</span>
+        </h2>
+
+        <div class="grid-4" style="margin-top: 2rem;">
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3 class="gold-text">Ekskluzivna Distribucija<span class="chinese" style="color: var(--white);">独家经销</span></h3>
+                <p>Ekskluzivna prava za regione</p>
+                <p class="chinese-inline">区域独家经销权</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏪</div>
+                <h3 class="gold-text">Uvoz i Veleprodaja<span class="chinese" style="color: var(--white);">进口批发</span></h3>
+                <p>Direktan uvoz iz Srbije</p>
+                <p class="chinese-inline">从塞尔维亚直接进口</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🍽️</div>
+                <h3 class="gold-text">HoReCa<span class="chinese" style="color: var(--white);">酒店餐饮</span></h3>
+                <p>Hoteli, restorani, barovi</p>
+                <p class="chinese-inline">酒店、餐厅、酒吧</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎁</div>
+                <h3 class="gold-text">Poklon Tržište<span class="chinese" style="color: var(--white);">礼品市场</span></h3>
+                <p>Premium pokloni i setovi</p>
+                <p class="chinese-inline">高端礼品和套装</p>
+            </div>
+        </div>
+
+        <span class="slide-number">12 / 14</span>
+    </section>
+
+    <!-- SLIDE 13: Contact -->
+    <section class="slide slide-light">
+        <h2 class="dark-text">
+            Kontakt
+            <span class="chinese dark-text">联系方式</span>
+        </h2>
+
+        <div class="contact-grid" style="margin-top: 3rem;">
+            <div class="contact-item">
+                <div class="icon">📍</div>
+                <h4 class="dark-text">Adresa · 地址</h4>
+                <p class="dark-text">Medoševački Put 2a<br>Lazarevac, Srbija</p>
+            </div>
+
+            <div class="contact-item">
+                <div class="icon">📞</div>
+                <h4 class="dark-text">Telefon · 电话</h4>
+                <p class="dark-text">+381 65 383 00 10</p>
+            </div>
+
+            <div class="contact-item">
+                <div class="icon">✉️</div>
+                <h4 class="dark-text">Email · 邮箱</h4>
+                <p class="dark-text">destilerijarankovic@gmail.com</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 3rem;">
+            <p class="dark-text" style="font-size: 1.5rem;">
+                🌐 rakijatalija.rs
+            </p>
+        </div>
+
+        <span class="slide-number" style="color: var(--dark);">13 / 14</span>
+    </section>
+
+    <!-- SLIDE 14: Closing -->
+    <section class="slide slide-dark title-slide">
+        <div class="corner-decoration corner-tl"></div>
+        <div class="corner-decoration corner-br"></div>
+
+        <div class="brand">TALIJA</div>
+
+        <div class="gold-line"></div>
+
+        <div class="quote" style="font-size: 1.75rem;">
+            Pozivamo vas da postanete deo naše priče.
+        </div>
+        <p class="chinese-inline" style="font-size: 1.5rem; margin-top: 1rem;">
+            欢迎您成为我们故事的一部分。
+        </p>
+
+        <div style="margin-top: 4rem;">
+            <p style="font-size: 1.25rem; letter-spacing: 0.2em;">
+                Rakija sa Pričom · 有故事的拉基亚
+            </p>
+        </div>
+
+        <p style="margin-top: 3rem; opacity: 0.5; font-size: 0.9rem;">
+            Hvala · 谢谢
+        </p>
+
+        <span class="slide-number">14 / 14</span>
+    </section>
+
+    <script>
+        // Navigation dots functionality
+        const dots = document.querySelectorAll('.nav-dot');
+        const slides = document.querySelectorAll('.slide');
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const slideIndex = dot.getAttribute('data-slide');
+                slides[slideIndex].scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Update active dot on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(slides).indexOf(entry.target);
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        slides.forEach(slide => observer.observe(slide));
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            const currentSlide = Array.from(slides).findIndex(slide => {
+                const rect = slide.getBoundingClientRect();
+                return rect.top >= -100 && rect.top <= 100;
+            });
+
+            if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+                e.preventDefault();
+                if (currentSlide < slides.length - 1) {
+                    slides[currentSlide + 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                e.preventDefault();
+                if (currentSlide > 0) {
+                    slides[currentSlide - 1].scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
